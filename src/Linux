@@ -1,0 +1,85 @@
+1. Использование команды cat в Linux
+2
+3 Создать файл 'Pets.txt:
+4 cat > Pets.txt
+5 Fido Dog
+6 Whiskers Cat
+7 Hammy Hamster
+8 Buddy Dog
+9 Smudge Cat
+10 Peanut Hamster
+11 Bella Dog
+12 Oliver Cat
+13
+14 Создать файл 'Pack animals.txt:
+15 cat > 'Pack animals.txt'
+16 Thunder Horse
+17 Sandy Camel
+18 Eeyore Donkey
+19 Storm Horse
+20 Dune Camel
+21 Burro Donkey
+22 Blaze Horse
+23 Sahara Camel
+24
+25 Объединить содержимое этих двух файлов в один и просмотреть его содержимое:
+26 cat 'Pets.txt' 'Pack animals.txt' > combined.txt
+27 cat combined.txt
+28
+29 Переименовать получившийся файл в 'Human Friends':
+30 mv combined.txt 'Human Friends.txt'
+31
+32 Результат команты ls:
+33 'Human Friends.txt' 'Pack animals.txt' Pets.txt
+34
+35   2. Работа с директориями в Linux
+36
+37 Создать новую директорию и переместить туда файл 'Human Friends':
+38 mkdir NewDir
+39 mv 'Human Friends.txt' NewDir/
+40
+41 Результат команды tree:
+42 .
+43 ├── NewDir
+44 │ └── Human Friends.txt
+45 ├── Pack animals.txt
+46 └── Pets.txt
+47
+48   3. Работа с MySQL в Linux. 'Установить MySQL на вашу вычислительную машину'
+49
+50 Подключить дополнительный репозиторий MySQL и установить один из пакетов из этого
+репозитория:
+51 wget https://dev.mysql.com/get/mysql-apt-config_0.8.28-1_all.deb
+52 sudo dpkg -i mysql-apt-config_0.8.28-1_all.deb
+53 sudo apt-get update
+54 sudo apt-get install mysql-server
+55
+56 Результат команды systemctl status mysql:
+57 ● mysql.service - MySQL Community Server
+58 Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor
+preset: enabled)
+59 Active: active (running) since Sat 2023-11-11 09:49:48 +05; 15min ago
+60 Docs: man:mysqld(8)
+61 http://dev.mysql.com/doc/refman/en/using-systemd.html
+62 Main PID: 78105 (mysqld)
+63 Status: "Server is operational"
+64 Tasks: 37 (limit: 2264)
+65 Memory: 360.6M
+66 CPU: 13.386s
+67 CGroup: /system.slice/mysql.service
+68 └─78105 /usr/sbin/mysqld
+69
+70
+71   4. Управление deb-пакетами
+72
+73 Установить и затем удалить deb-пакет, используя команду 'dpkg':
+74 http://archive.ubuntu.com/ubuntu/pool/universe/m/mc/mc_4.8.29-2_amd64.deb
+75 sudo dpkg -i mc_4.8.24-2ubuntu1_amd64.deb
+76 sudo apt install -f
+77 mc
+78 sudo dpkg -r mc
+79
+80   5. История команд в терминале Ubuntu
+81 Сохранить и выложить историю ваших терминальных команд в Ubuntu. В формате: Файла
+с ФИО, датой сдачи, номером группы(или потока):
+History_Kuznetsov_Vadim_Vitalyevich_06.03.2025
